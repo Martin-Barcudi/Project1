@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.containerHP{
+    width: 400px;
+    height: min-content;
+    background-color: lavender;
+    border-radius: 20px;
+    position: absolute;
+}
+
+
+
+.title{
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.title h1{
+    font-size: 1.1rem;
+}
+
+.questionAnswer{
+    padding: 20px 15px;
+    height: min-content;
+}
+
+.question{
+    height: 10%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.answers{
+    margin: 10px 0px;
+    margin-bottom: 0px;
+    display: grid;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.answer{
+    background-color: lightblue;
+    padding: 1em 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.answer:hover{
+    background-color: #64bcda;
+}
+
+.title, .questionAnswer, .numberQuestion{
+    padding-left: 1.3em;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.resultContainerHP{
+    width: 400px;
+    padding: 1.5em;
+    background-color: lavender;
+    border-radius: 20px;
+    display: grid;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.home{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.results{
+    display: grid;
+    grid-template-rows: 65px;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.winner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .5em;
+    /* height: 100%; */
+
+}
+
+.notWinners{
+    list-style-type: none;
+    display: grid;
+    gap: 20px;
+}
+
+.winner, .place{
+    border-radius: 8px;
+    text-align: center;
+}
+
+.place{
+    padding: .5em;
+}
+
+.again{
+    padding: .5em;
+    background-color: lightblue;
+    width: 100px;
+    /* margin: auto; */
+    text-align: center;
+    border-radius: 10px;
+    justify-self: center;
+    cursor: pointer;
+}
+
+.again:hover{
+    background-color: #64bcda;
+    transition: background-color .3s;
+}
+
+
+
+.numberQuestion{
+    padding: 1em;
+    text-align: center;
+}

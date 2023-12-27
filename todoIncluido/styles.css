@@ -1,0 +1,451 @@
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body{
+    min-height: 100vh;
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s
+}
+
+
+.back{
+    /* display: none; */
+    pointer-events: none;
+    opacity: 0;
+    color: #3f3f3f;
+    font-size: 2rem;
+    font-weight: 700;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    transition: transform .2s, opacity 2s, color .5s;
+}
+
+.back:hover{
+    transform: scale(1.2);
+}
+
+.header{
+    width: max-content;
+    padding: 1em;
+    background-color: royalblue;
+    color: lavender;
+    border-radius: .5em;
+    text-align: center;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 2s;
+
+}
+
+.interactiveModal{
+    width: 400px;
+    height: min-content;
+    display: grid;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+    transition: opacity 1s, transform 1s;
+}
+
+.options{
+    color: #333;
+    font-weight: 600;
+}
+
+.list{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    border: 3px solid rgba(0,0,0,.8);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.list li{
+    display: block;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.15);
+    border-radius: px;
+    cursor: pointer;
+    transition: background-color .2s, color .5s;
+}
+
+.list li:hover{
+    /* background-color: #c8c8f9; */
+    background-color: #5a5af8;
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+.container{
+    display: none;
+    width: 400px;
+    height: 95px;
+    padding: 28px 32px;
+    background-color: lavender;
+    outline: 10px solid lightgray;
+    border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: all .5s ease-out;
+}
+
+.search-box{
+    width: 100%;
+    height: min-content;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box input{
+    width: 100%;
+    padding-left: 2em;
+    background-color: transparent;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.search-box input::placeholder{
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.search-box button{
+    padding: .5em;
+    background-color: lightgray;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.search-box button:hover{
+    color: lavender;
+    background-color: #000;
+}
+
+
+
+.search-box span.location{
+    font-size: 28px;
+}
+
+.search-box label{
+    cursor: text;
+    position: absolute;
+}
+
+
+.weather-box{
+    text-align: center;
+}
+
+
+.weather-box img{
+    width: 60%;
+    height: 170px;
+    margin-top: 30px;
+    /* opacity: 0; */
+}
+
+.weather-box .temperature{
+    margin-top: 30px;
+    margin-left: -5px;
+    color: #000;
+    font-size: 4rem;
+    font-weight: 800;
+    position: relative;
+}
+
+.weather-box .temperature span{
+    margin-left: 4px;
+    position: absolute;
+    font-size: 1.5rem;
+}
+
+.weather-box .description{
+    color: #000;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.weather-details{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-details .humidity, .weather-details .wind{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.weather-details .humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.weather-details .wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+
+.weather-details span{
+    margin-top: 6px;
+    margin-right: 10px;
+    display: block;
+    font-size: 28px;
+}
+
+.weather-details .text span{
+    color: #000;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.text p{
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.not-found{
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    display: none;
+    scale: 0;
+    opacity: 0;
+}
+
+.not-found img{
+    width: 70%;
+}
+
+.not-found p{
+    color: #000;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.weather-box, .weather-details{
+    scale: 0;
+    opacity: 0;
+}
+
+
+.textTransition{
+    /* opacity: 0; */
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    transition: all .5s;
+}
+
+
+.fade-in{
+    animation: 1s fadeIn forwards;
+    animation-delay: .5s;
+
+}
+
+
+@keyframes fadeIn {
+  
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+/* .container{
+    display: none;
+    width: 400px;
+    height: 95px;
+    padding: 28px 32px;
+    background-color: lavender;
+    outline: 10px solid lightgray;
+    border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: all .5s ease-out;
+} */
+
+
+
+.containerHP{
+    display: none;
+    width: 400px;
+    height: min-content;
+    background-color: lavender;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    transition: all .5s ease-out;
+}
+
+
+
+.title{
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.title h1{
+    font-size: 1.1rem;
+}
+
+.questionAnswer{
+    padding: 20px 15px;
+    height: min-content;
+}
+
+.question{
+    height: 10%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.answers{
+    margin: 10px 0px;
+    margin-bottom: 0px;
+    display: grid;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.answer{
+    background-color: lightblue;
+    padding: 1em 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.answer:hover{
+    background-color: #64bcda;
+}
+
+.title, .questionAnswer, .numberQuestion{
+    padding-left: 1.3em;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.resultContainerHP{
+    width: 400px;
+    padding: 1.5em;
+    background-color: lavender;
+    border-radius: 20px;
+    display: grid;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.home{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.results{
+    display: grid;
+    grid-template-rows: 65px;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.winner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .5em;
+    /* height: 100%; */
+
+}
+
+.notWinners{
+    list-style-type: none;
+    display: grid;
+    gap: 20px;
+}
+
+.winner, .place{
+    border-radius: 8px;
+    text-align: center;
+}
+
+.place{
+    padding: .5em;
+}
+
+.again{
+    padding: .5em;
+    background-color: lightblue;
+    width: 100px;
+    /* margin: auto; */
+    text-align: center;
+    border-radius: 10px;
+    justify-self: center;
+    cursor: pointer;
+}
+
+.again:hover{
+    background-color: #64bcda;
+    transition: background-color .3s;
+}
+
+
+
+.numberQuestion{
+    padding: 1em;
+    text-align: center;
+}
